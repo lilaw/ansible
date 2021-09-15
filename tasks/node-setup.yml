@@ -1,0 +1,15 @@
+- name: curl volta
+  get_url: url=https://get.volta.sh dest=/tmp/volta.sh mode=0755
+  tags:
+    - install
+    - node
+- name: Install volta
+  shell: /tmp/volta.sh
+  tags:
+    - install
+    - node
+- name: Install node LST
+  shell: $HOME/.volta/bin/volta install node
+  tags:
+    - install
+    - node
